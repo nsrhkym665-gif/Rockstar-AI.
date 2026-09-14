@@ -1,0 +1,11 @@
+{
+  "name": "ROCK NEWS AR",
+  "short_name": "ROCK NEWS AR",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "description": "موقع عربي غير رسمي لأخبار ألعاب Rockstar Games."
+}

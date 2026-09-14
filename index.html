@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="ROCK NEWS AR — موقع جماهيري عربي غير رسمي لأخبار ألعاب Rockstar Games.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="ROCK NEWS AR">
+  <meta property="og:description" content="كل أخبار ألعاب روكستار... بالعربي.">
+  <meta property="og:type" content="website">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>ROCK NEWS AR — أخبار ألعاب Rockstar بالعربي</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loading" class="loading-screen" aria-live="polite">
+    <div class="loader-mark">RN</div><div>جارٍ تجهيز الأخبار...</div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#home" aria-label="ROCK NEWS AR">
+        <span class="brand-main">ROCK NEWS</span><span class="brand-ar">AR</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#latest">آخر الأخبار</a>
+        <a href="#gta6">GTA VI</a>
+        <a href="#latest" data-filter-link="GTA Online">GTA Online</a>
+        <a href="#latest" data-filter-link="Red Dead">Red Dead</a>
+        <a href="#games">باقي الألعاب</a>
+        <a href="#favorites">المفضلة <span id="favCount" class="count">0</span></a>
+        <button class="search-open" id="searchOpen" type="button">بحث</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">ROCK NEWS AR / غير رسمي</p>
+        <h1>كل أخبار ألعاب روكستار... <span>بالعربي.</span></h1>
+        <p class="hero-text">مركز عربي خفيف لمتابعة أخبار Rockstar Games، مع أولوية للمصادر الرسمية وروابطها الأصلية.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#latest">آخر الأخبار</a>
+          <a class="btn btn-outline" href="https://www.rockstargames.com/newswire" target="_blank" rel="noopener noreferrer">Rockstar Newswire ↗</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-grid"></div>
+        <div class="art-word">ROCK<br><span>NEWS</span></div>
+        <div class="art-line"></div>
+      </div>
+    </section>
+
+    <section class="status-bar container">
+      <div><span class="status-dot"></span><strong>وضع الأخبار:</strong> ملف محلي منظم — ليس Live</div>
+      <div id="lastUpdated">آخر تحديث: —</div>
+    </section>
+
+    <section class="section container" id="latest">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">المصدر أولًا</p>
+          <h2>عاجل / أحدث الأخبار</h2>
+        </div>
+        <button class="text-button" id="clearFilters" type="button">إظهار الكل</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" role="tablist" aria-label="فلترة الأخبار">
+          <button class="filter active" data-filter="all">الكل</button>
+          <button class="filter" data-filter="GTA VI">GTA VI</button>
+          <button class="filter" data-filter="GTA Online">GTA Online</button>
+          <button class="filter" data-filter="GTA V">GTA V</button>
+          <button class="filter" data-filter="Red Dead">Red Dead</button>
+          <button class="filter" data-filter="other">ألعاب أخرى</button>
+          <button class="filter" data-filter="favorites">المفضلة</button>
+        </div>
+        <div class="search-box">
+          <label for="searchInput">بحث</label>
+          <input id="searchInput" type="search" placeholder="ابحث في العنوان والوصف واللعبة..." autocomplete="off">
+        </div>
+      </div>
+
+      <div id="newsGrid" class="news-grid"></div>
+      <div id="emptyState" class="empty hidden">
+        <div class="empty-icon">⌕</div>
+        <h3>لا توجد نتائج</h3>
+        <p>جرّب تغيير الفلتر أو كلمات البحث.</p>
+        <button class="btn btn-light" id="emptyReset">إعادة الضبط</button>
+      </div>
+    </section>
+
+    <section class="gta6-section" id="gta6">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">معلومات مؤكدة فقط</p>
+            <h2>كل ما نعرفه رسميًا عن GTA VI</h2>
+          </div>
+          <a class="text-button" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a>
+        </div>
+        <div class="facts">
+          <article><span>موعد الإصدار الحالي</span><strong>19 نوفمبر 2026</strong><small>وفق الموقع الرسمي وقت إنشاء هذه النسخة.</small></article>
+          <article><span>المنصات</span><strong>PS5 / Xbox Series X|S</strong><small>المنصات المذكورة رسميًا حاليًا.</small></article>
+          <article><span>الشخصيات</span><strong>Jason & Lucia</strong><small>شخصيتا القصة الرئيسيتان المذكورتان رسميًا.</small></article>
+          <article><span>الموقع</span><strong>Vice City / Leonida</strong><small>عالم اللعبة الرسمي المعلن حتى الآن.</small></article>
+        </div>
+        <div class="gta6-note">
+          <strong>آخر تحديث رسمي ظاهر في المصدر:</strong>
+          <span>العرض الموسّع لـ GTA VI متاح منذ 27 أغسطس 2026.</span>
+          <a href="https://www.rockstargames.com/VI/an-extended-look" target="_blank" rel="noopener noreferrer">مشاهدة المصدر ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="games">
+      <div class="section-head">
+        <div><p class="eyebrow">Game Library</p><h2>الألعاب</h2></div>
+        <span class="muted">اضغط على أي لعبة لعرض أخبارها.</span>
+      </div>
+      <div id="gamesGrid" class="games-grid"></div>
+    </section>
+
+    <section class="section container favorites-section" id="favorites">
+      <div class="section-head">
+        <div><p class="eyebrow">محفوظاتك</p><h2>المفضلة</h2></div>
+      </div>
+      <div id="favoritesGrid" class="news-grid"></div>
+      <div id="favoritesEmpty" class="empty"><div class="empty-icon">☆</div><h3>لا توجد أخبار محفوظة</h3><p>اضغط على علامة النجمة داخل أي خبر لإضافته هنا.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><div class="brand footer-brand"><span class="brand-main">ROCK NEWS</span><span class="brand-ar">AR</span></div><p>موقع جماهيري عربي غير رسمي لمتابعة أخبار ألعاب Rockstar Games.</p></div>
+      <div><strong>مصادر موثوقة</strong><a href="https://www.rockstargames.com/newswire" target="_blank" rel="noopener noreferrer">Rockstar Newswire</a><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">GTA VI الرسمي</a></div>
+      <div><strong>الحالة</strong><span>البيانات الحالية محلية وليست لحظية.</span><span id="footerUpdated">آخر تحديث: —</span></div>
+    </div>
+    <div class="container legal">ROCK NEWS AR موقع جماهيري غير رسمي، غير تابع أو معتمد من Rockstar Games أو Take-Two Interactive. أسماء الألعاب والعلامات التجارية تعود إلى أصحابها.</div>
+  </footer>
+
+  <button id="backTop" class="back-top" aria-label="العودة للأعلى">↑</button>
+
+  <div id="reader" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+    <div class="modal-backdrop" data-close></div>
+    <article class="reader-panel">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <div id="readerBody"></div>
+    </article>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data/news.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
